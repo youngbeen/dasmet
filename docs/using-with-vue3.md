@@ -24,11 +24,11 @@ provide () {
 > Tips:
 >
 > 1. `reactive` is vue3 standard api of making data reactive in depth
-> 2. `newStore` method is from `Dasmet` of generating a data store instance
+> 2. `newStore` method is from `dasmet` of generating a data store instance
 
 
 
-Then *inject* data store in any component
+Then *inject* data store in any child component
 
 ```javascript
 inject: ['system']

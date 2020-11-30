@@ -16,14 +16,14 @@ if you hate ugly API usage for plain data store management, you may try `dasmet`
 | **data snapshot**             | ✅ Yes                                 | ❌ No       | ❌ No             |
 | **weight**                    | ☹️ Heavy                               | 🙂 Light    | 🙂 Light          |
 
-> Tip: Please noted that if you need data snapshot, a state management system is still better solution. But if you are aware of that #YouMayNotNeedStateManagement#, you should abandon state management system in you project from now.
+> Tip: Please note that if you need data snapshot, a state management system is still better solution. But if you are aware of that #YouMayNotNeedStateManagement#, you should avoid using state management system in you project from now.
 
 
 
 ### Features
 
 * Easy API design as first-class rule
-* Array.get() like map
+* `Array.get()` like map
 
 ### Install
 
@@ -36,7 +36,7 @@ npm i -S @youngbeen/dasmet
 ### Import
 
 ```javascript
-import { newStore, newDict } from '@youngbeen/dasmet'
+import { newStore } from '@youngbeen/dasmet'
 ```
 
 ### Usage
@@ -44,7 +44,7 @@ import { newStore, newDict } from '@youngbeen/dasmet'
 #### Store Usage
 
 ```javascript
-// generating store instance
+// generating data store instance
 let userStore = newStore({
   userName: '',
   userId: ''
@@ -59,7 +59,7 @@ userStore.set('newKey', 1)
   newKey: 1
 } 
 */
-// setting value by object (merge value)
+// setting value by object merging (merge value)
 userStore.set({
   userName: 'youngbeen',
   userId: '21'
@@ -81,7 +81,7 @@ userStore.value.userId // -> '21'
 
 #### Dict Usage
 
-New ES6+ Array has many amazing features like `filter`,` map` etc. In a dict model we ofter want to *get* an item directly, however it is not convenient using `dict.someDictTypes.find(item => item.key === targetKey)`
+New ES6+ `Array` has many amazing features like `filter`,` map` etc. In a dict model we ofter want to *get* an item directly, however it is not convenient using `dict.someDictTypes.find(item => item.key === targetKey)`
 
 `Dasmet` brings a native support(via `Array.prototype`) of `Array.get` method
 
@@ -96,7 +96,7 @@ e.g.
 dict.someDictTypes.get(targetKey)
 ```
 
-Meanwhile, you can set which key to *get*
+Meanwhile, you can choose which key to *get*
 
 ```javascript
 dict.someDictTypes.get(targetKey, myKeyName)
