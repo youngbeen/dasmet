@@ -7,14 +7,15 @@
 
 if you hate ugly API usage for plain data store management, you may try `dasmet`
 
-|                               | vuex or other state management system | data model | `dasmet`         |
-| ----------------------------- | ------------------------------------- | ---------- | ---------------- |
-| **data init**                 | ☹️ Complicated                         | 🙂 Simple   | 🙂 Simple         |
-| **accessing data**            | 😐 A little complicated                | 🙂 Simple   | 🙂 Simple         |
-| **setting by k-v**            | Must via commit(maybe complicated)    | 🙂 Simple   | 🙂 Simple         |
-| **setting by object merging** | Must via commit(maybe complicated)    | ❌ No       | ✅ Yes yet simple |
-| **data snapshot**             | ✅ Yes                                 | ❌ No       | ❌ No             |
-| **weight**                    | ☹️ Heavy                               | 🙂 Light    | 🙂 Light          |
+|                                      | vuex or other state management system | data model | `dasmet`         |
+| ------------------------------------ | ------------------------------------- | ---------- | ---------------- |
+| **data init**                        | ☹️ Complicated                         | 🙂 Simple   | 🙂 Simple         |
+| **accessing data**                   | 😐 A little complicated                | 🙂 Simple   | 🙂 Simple         |
+| **setting by k-v**                   | Must via commit(maybe complicated)    | 🙂 Simple   | 🙂 Simple         |
+| **setting by object merging**        | Must via commit(maybe complicated)    | ❌ No       | ✅ Yes yet simple |
+| **data snapshot**                    | ✅ Yes                                 | ❌ No       | ❌ No             |
+| **weight**                           | ☹️ Heavy                               | 🙂 Light    | 🙂 Light          |
+| **native Array bonus utill support** | ❌ No                                  | ❌ No       | ✅ Yes            |
 
 > Tip: Please note that if you need data snapshot, a state management system is still better solution. But if you are aware of that #YouMayNotNeedStateManagement#, you should avoid using state management system in you project from now.
 
