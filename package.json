@@ -1,0 +1,29 @@
+{
+  "name": "@youngbeen/dasmet",
+  "version": "0.1.0",
+  "description": "`Dasmet` is a light weight data management(e.g. store, dict) util library",
+  "main": "dist/index.js",
+  "scripts": {
+    "compile": "babel -d ./dist src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/youngbeen/dasmet"
+  },
+  "keywords": [
+    "data",
+    "store",
+    "dict",
+    "util",
+    "javascript",
+    "js"
+  ],
+  "author": "youngbeen",
+  "license": "ISC"
+}
