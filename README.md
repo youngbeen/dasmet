@@ -11,7 +11,7 @@
 
 if you hate ugly API usage for plain data store management, you may try `dasmet`
 
-|                               | vuex or other store management system | data model | `dasmet`         |
+|                               | vuex or other state management system | data model | `dasmet`         |
 | ----------------------------- | ------------------------------------- | ---------- | ---------------- |
 | **data init**                 | ☹️ Complicated                         | 🙂 Simple   | 🙂 Simple         |
 | **accessing data**            | 😐 A little complicated                | 🙂 Simple   | 🙂 Simple         |
@@ -20,7 +20,7 @@ if you hate ugly API usage for plain data store management, you may try `dasmet`
 | **data snapshot**             | ✅ Yes                                 | ❌ No       | ❌ No             |
 | **weight**                    | ☹️ Heavy                               | 🙂 Light    | 🙂 Light          |
 
-
+> Tip: Please noted that if you need data snapshot, a state management system is still better solution. But if you are aware of that #YouMayNotNeedStateManagement#, you should abandon state management system in you project from now.
 
 ### Install
 
