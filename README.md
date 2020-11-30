@@ -5,10 +5,6 @@
 
 `Dasmet` is a light weight data management(e.g. store, dict) util library
 
-### Features
-
-* Easy API design as first-class rule
-
 if you hate ugly API usage for plain data store management, you may try `dasmet`
 
 |                               | vuex or other state management system | data model | `dasmet`         |
@@ -21,6 +17,13 @@ if you hate ugly API usage for plain data store management, you may try `dasmet`
 | **weight**                    | ☹️ Heavy                               | 🙂 Light    | 🙂 Light          |
 
 > Tip: Please noted that if you need data snapshot, a state management system is still better solution. But if you are aware of that #YouMayNotNeedStateManagement#, you should abandon state management system in you project from now.
+
+
+
+### Features
+
+* Easy API design as first-class rule
+* Array.get() like map
 
 ### Install
 
@@ -74,6 +77,33 @@ userStore.get('userName') // -> 'youngbeen'
 userStore.value.userId // -> '21'
 ```
 
+
+
+#### Dict Usage
+
+New ES6+ Array has many amazing features like `filter`,` map` etc. In a dict model we ofter want to *get* an item directly, however it is not convenient using `dict.someDictTypes.find(item => item.key === targetKey)`
+
+`Dasmet` brings a native support(via `Array.prototype`) of `Array.get` method
+
+```javascript
+Array.get(value, [keyName])
+```
+
+e.g.
+
+```javascript
+// finding item by specific value
+dict.someDictTypes.get(targetKey)
+```
+
+Meanwhile, you can set which key to *get*
+
+```javascript
+dict.someDictTypes.get(targetKey, myKeyName)
+```
+
+> Tip: if `keyName` not set, default *get* priority is `id > key > value`
+
 ### Documents
 
-n/a
+* [Example of using with vue3](./docs/using-with-vue3.md)
