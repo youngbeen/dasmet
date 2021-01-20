@@ -46,52 +46,54 @@ var newStore = function newStore(data) {
   } else {
     throw new Error('source data must be object');
   }
-}; // adding support for Array prototype
-
+};
 
 exports.newStore = newStore;
 
-Array.prototype.get = function (property) {
-  var keyName = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+if (!Array.prototype.get) {
+  // adding support for Array prototype
+  Array.prototype.get = function (property) {
+    var keyName = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
 
-  // console.log(property, keyName)
-  if (property && isString(property)) {
-    if (!this.length) {
-      return undefined;
-    }
-
-    var sampleItem = this[0];
-
-    if (isObject(sampleItem)) {
-      // object item
-      var keys = Object.keys(sampleItem);
-
-      if (!keyName) {
-        // keyName not set, auto detect it
-        // NOTE keyName support priority: id > key > value
-        if (keys.includes('id')) {
-          keyName = 'id';
-        } else if (keys.includes('key')) {
-          keyName = 'key';
-        } else {
-          keyName = 'value';
-        }
-      }
-
-      if (!keys.includes(keyName)) {
+    // console.log(property, keyName)
+    if (property && isString(property)) {
+      if (!this.length) {
         return undefined;
       }
 
-      return this.find(function (item) {
-        return item[keyName] === property;
-      });
+      var sampleItem = this[0];
+
+      if (isObject(sampleItem)) {
+        // object item
+        var keys = Object.keys(sampleItem);
+
+        if (!keyName) {
+          // keyName not set, auto detect it
+          // NOTE keyName support priority: id > key > value
+          if (keys.includes('id')) {
+            keyName = 'id';
+          } else if (keys.includes('key')) {
+            keyName = 'key';
+          } else {
+            keyName = 'value';
+          }
+        }
+
+        if (!keys.includes(keyName)) {
+          return undefined;
+        }
+
+        return this.find(function (item) {
+          return item[keyName] === property;
+        });
+      } else {
+        // value item
+        throw new Error('item must be object when invoke "get"');
+      }
     } else {
-      // value item
-      throw new Error('item must be object when invoke "get"');
+      throw new Error('key must be string when invoke "get"');
     }
-  } else {
-    throw new Error('key must be string when invoke "get"');
-  }
-}; // export default {
+  };
+} // export default {
 //   newStore
 // }

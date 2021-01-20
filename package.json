@@ -1,6 +1,6 @@
 {
   "name": "@youngbeen/dasmet",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "`Dasmet` is a light weight data management(e.g. store, dict) util library",
   "main": "dist/index.js",
   "scripts": {
